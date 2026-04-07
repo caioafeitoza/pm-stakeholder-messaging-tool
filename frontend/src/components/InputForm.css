@@ -1,0 +1,143 @@
+/* ── Form wrapper ────────────────────────────────────────────── */
+.input-form {
+  background: #fff;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ── Field group ─────────────────────────────────────────────── */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #222;
+}
+
+/* ── Textarea ────────────────────────────────────────────────── */
+.field-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: #1a1a1a;
+  background-color: #fafafa;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 8px;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  line-height: 1.55;
+}
+
+.field-group textarea:focus {
+  outline: none;
+  border-color: #1a1a1a;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+.field-group textarea:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.field-group textarea.has-error {
+  border-color: #e53e3e;
+  background-color: #fff5f5;
+}
+
+.field-group textarea.has-error:focus {
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.12);
+}
+
+/* ── Field meta row (error + char count) ─────────────────────── */
+.field-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 18px;
+}
+
+.field-error {
+  font-size: 0.8rem;
+  color: #e53e3e;
+  font-weight: 500;
+}
+
+.char-count {
+  font-size: 0.78rem;
+  color: #aaa;
+  margin-left: auto;
+  transition: color 0.2s;
+}
+
+.char-count.near-limit {
+  color: #e53e3e;
+  font-weight: 600;
+}
+
+/* ── Submit button ───────────────────────────────────────────── */
+.submit-btn {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: #FF9B51;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #333;
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── Button spinner ──────────────────────────────────────────── */
+.btn-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: btn-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .input-form {
+    padding: 20px 16px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

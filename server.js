@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Serve frontend static files
-app.use(express.static(path.join(__dirname, 'frontend')));
+// Serve Vite build output
+app.use(express.static(path.join(__dirname, 'frontend', 'dist')));
 
 // Routes
 app.get('/api/health', (req, res) => {
@@ -21,9 +21,9 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api/generate', generateRoute);
 
-// Catch-all: serve index.html for any non-API route
+// Catch-all: serve Vite's index.html for any non-API route
 app.get('/{*path}', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+  res.sendFile(path.join(__dirname, 'frontend', 'dist', 'index.html'));
 });
 
 app.listen(PORT, () => {

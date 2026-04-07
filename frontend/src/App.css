@@ -1,0 +1,87 @@
+/* ── Reset & Base ────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background-color: #EAEFEF;
+  color: #25343F;
+  line-height: 1.6;
+}
+
+/* ── App Shell ───────────────────────────────────────────────── */
+.app {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.app-header {
+  margin-bottom: 36px;
+  padding-bottom: 24px;
+  border-bottom: 1.5px solid #e0e0e0;
+}
+
+.app-header h1 {
+  color: #25343F;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.app-header p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* ── Results heading ─────────────────────────────────────────── */
+.results-header {
+  margin-bottom: 20px;
+  padding-top: 8px;
+}
+
+.results-header h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.results-header p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ── Error banner ────────────────────────────────────────────── */
+.error-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 12px 16px;
+  background-color: #fff5f5;
+  border: 1.5px solid #feb2b2;
+  border-radius: 8px;
+  color: #c53030;
+  font-size: 0.9rem;
+}
+
+.error-banner span:first-child {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .app {
+    padding: 24px 16px 60px;
+  }
+
+  .app-header h1 {
+    font-size: 1.4rem;
+  }
+}
